@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 import time
-from ctypes import *
-api = cdll.LoadLibrary("msdk.dll")
+#from ctypes import *
+
+import ctypes
+
+api = ctypes.CDLL("msdk.dll")
 vid = api.M_Open(1)
 api.M_ResetMousePos(vid)
 time.sleep(1)
