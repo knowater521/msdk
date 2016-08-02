@@ -3,8 +3,12 @@ import time
 #from ctypes import *
 
 import ctypes
+import platform
 
-api = ctypes.CDLL("msdk.dll")
+win_bit = platform.architecture()[0]
+if win_bit == "64bit":
+    api = ctypes.CDLL("win64/msdk.dll")
+
 vid = api.M_Open(1)
 api.M_ResetMousePos(vid)
 time.sleep(1)
