@@ -34,7 +34,7 @@ time.sleep(5)
 
 
 for i in range(79):
-    screenshot_single(str(i))
+    screenshot_single("2018-03" + str(i).zfill(3))
     api.M_KeyPress2(vid, 34, 1)
     time.sleep(3)
     print i
